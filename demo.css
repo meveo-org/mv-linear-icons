@@ -1,0 +1,48 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  background: #fff;
+}
+h1 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+small {
+  font-size: .66666667em;
+}
+.glyph {
+  font-size: 16px;
+  width: 15em;
+  padding: 0.5em 0;
+  margin: 0 2em;
+  float: left;
+  overflow: hidden;
+}
+.fgc1 {
+  color: #999;
+}
+.bgc1 {
+  background: #f1f1f1;
+}
+.mhmm {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.hidden-true {
+  display: none;
+}
+.fs1 {
+  font-size: 20px;
+}
