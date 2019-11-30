@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
-import "./mv-linear-icon.js";
-import { ICONS } from "./mv-linear-icon.js";
+import "./mv-linear-icons.js";
+import { ICONS } from "./mv-linear-icons.js";
 
 export class MvLinearIconDemo extends LitElement {
   static get properties() {
@@ -65,4 +65,4 @@ export class MvLinearIconDemo extends LitElement {
   }
 }
 
-customElements.define("mv-linear-icon-demo", MvLinearIconDemo);
+customElements.define("mv-linear-icons-demo", MvLinearIconDemo);
