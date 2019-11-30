@@ -1,4 +1,4 @@
-# mv-linear-icon
+# mv-linear-icons
 
  MvLinearIcon is a Meveo icon component (based on lit-element) that renders [Linearicons Free](https://linearicons.com/free) library icons.
 
