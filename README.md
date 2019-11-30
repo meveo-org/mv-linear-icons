@@ -3,7 +3,7 @@
  MvLinearIcon is a Meveo icon component (based on lit-element) that renders [Linearicons Free](https://linearicons.com/free) library icons.
 
 ## Features
-* Written in vanila javascript
+* Written in vanilla javascript
 * Simplifies icon loading from the library using only the icon name without the prefix
 
 
@@ -19,12 +19,12 @@ To experiment with the MvLinearIcon component.
     <style>
       @font-face {
         font-family: 'Linearicons-Free';
-        src: url('./fonts/Linearicons-Free.eot?w118d');
-        src: url('./fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'),
-          url('./fonts/Linearicons-Free.woff2?w118d') format('woff2'),
-          url('./fonts/Linearicons-Free.woff?w118d') format('woff'),
-          url('./fonts/Linearicons-Free.ttf?w118d') format('truetype'),
-          url('./fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
+        src: url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.eot?w118d');
+        src: url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'),
+          url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.woff2?w118d') format('woff2'),
+          url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.woff?w118d') format('woff'),
+          url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.ttf?w118d') format('truetype'),
+          url('{REPLACE_WITH_PATH_TO}/fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
         font-weight: normal;
         font-style: normal;
       }
@@ -34,7 +34,7 @@ To experiment with the MvLinearIcon component.
 4. View the index.html to see available icons, then use the component to load the chosen icon e.g.
 
    ```html
-   <mv-linear-icon icon="home"></mv-linear-icon>
+   <mv-lnr icon="home"></mv-lnr>
    ```
 
 ## Acknowledgements
