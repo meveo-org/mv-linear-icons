@@ -6,7 +6,7 @@ export class MvLinearIconDemo extends LitElement {
   static get properties() {
     return {
       value: { type: String, attribute: true },
-      open: { type: Boolean, attribute: true }
+      theme: { type: String, attribute: true }
     };
   }
 
@@ -43,40 +43,53 @@ export class MvLinearIconDemo extends LitElement {
       .fs1 {
         font-size: 20px;
       }
-
+      
+      fieldset > label, label > input {
+        cursor: pointer;
+      }
+      
+      fieldset {
+        width: 120px;
+        margin-left: 10px;
+        border:2px solid red;
+        -moz-border-radius:8px;
+        -webkit-border-radius:8px;	
+        border-radius:8px;
+        color: #818181;
+      }
+      
+      legend {
+        font-weight: 500;
+        color: red;
+      }
+      
+      .dark {
+        background-color: #373E48;
+      }
+      
       /* sample for overriding style */
       mv-lnr {
         font-size: 24px;
         color: #2196F3;
-      }
-      
-      .theme {
-        display: flex;
-        justify-content: flex-start;
-      }
-      
-      .theme mv-lnr {
-        font-size: 50px;
-        cursor: pointer;
-        margin: 20px;
       }
     `;
   }
 
   constructor() {
     super();
-    this.open = true;
+    this.theme = "light";
   }
 
   render() {
-    const iconColor = `color: ${this.open ? "yellow" : ""}`;
-    const backgroundColor = `background-color: ${this.open ? "" : "#373E48"}`;
-    const color = `color: ${this.open ? "" : "#FFFFFF"}`;
+    const isLightTheme = this.theme === "light";
+    const color = `color: ${isLightTheme ? "" : "#FFFFFF"}`;
     return html`
-      <div class="clearfix" style="${backgroundColor}">
-        <div class="theme">
-          <mv-lnr icon="sun" style="${iconColor}" @click=${this.toggleSun}></mv-lnr>
-        </div>
+      <div class="clearfix ${this.theme}">
+        <fieldset>
+          <legend>Theme</legend>
+          <label><input type="radio" name="theme" value="light" checked @change="${this.radioChange}" />Light</label>
+          <label><input type="radio" name="theme" value="dark" @change="${this.radioChange}" />Dark</label>
+        </fieldset>
       ${ICONS.map(
         icon => html`
         <div class="glyph fs1">
@@ -91,9 +104,9 @@ export class MvLinearIconDemo extends LitElement {
     `;
   }
 
-  toggleSun = () => {
-    this.open = !this.open;
-    if (this.open) {
+  radioChange = originalEvent => {
+    const { target: { value } } = originalEvent;
+    if (value === "light") {
       this.theme = "light";
     } else {
       this.theme = "dark";
