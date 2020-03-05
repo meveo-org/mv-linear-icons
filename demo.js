@@ -52,9 +52,9 @@ export class MvLinearIconDemo extends LitElement {
         width: 120px;
         margin-left: 10px;
         border:2px solid red;
-        -moz-border-radius:8px;
-        -webkit-border-radius:8px;	
-        border-radius:8px;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;	
+        border-radius: 8px;
         color: #818181;
       }
       
@@ -65,11 +65,15 @@ export class MvLinearIconDemo extends LitElement {
       
       .dark {
         background-color: #373E48;
+        color: #FFFFFF;
       }
       
       /* sample for overriding style */
       mv-lnr {
         font-size: 24px;
+      }
+      
+      .light mv-lnr {
         color: #2196F3;
       }
     `;
@@ -81,21 +85,19 @@ export class MvLinearIconDemo extends LitElement {
   }
 
   render() {
-    const isLightTheme = this.theme === "light";
-    const color = `color: ${isLightTheme ? "" : "#FFFFFF"}`;
     return html`
       <div class="clearfix ${this.theme}">
         <fieldset>
           <legend>Theme</legend>
-          <label><input type="radio" name="theme" value="light" checked @change="${this.radioChange}" />Light</label>
-          <label><input type="radio" name="theme" value="dark" @change="${this.radioChange}" />Dark</label>
+          <label><input type="radio" name="theme" value="light" checked @change="${this.changeTheme}" />Light</label>
+          <label><input type="radio" name="theme" value="dark" @change="${this.changeTheme}" />Dark</label>
         </fieldset>
       ${ICONS.map(
         icon => html`
         <div class="glyph fs1">
           <div class="clearfix">
-            <mv-lnr icon="${icon}" style="${color}"></mv-lnr>
-            <span class="mls" style="${color}"> ${icon}</span>
+            <mv-lnr icon="${icon}"></mv-lnr>
+            <span class="mls"> ${icon}</span>
           </div>
         </div>
         `
@@ -104,13 +106,9 @@ export class MvLinearIconDemo extends LitElement {
     `;
   }
 
-  radioChange = originalEvent => {
+  changeTheme = originalEvent => {
     const { target: { value } } = originalEvent;
-    if (value === "light") {
-      this.theme = "light";
-    } else {
-      this.theme = "dark";
-    }
+    this.theme = value;
   };
 }
 
