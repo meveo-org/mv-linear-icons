@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from "lit";
 import "./mv-linear-icons.js";
 import { ICONS } from "./mv-linear-icons.js";
 
